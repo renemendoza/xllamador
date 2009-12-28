@@ -1,0 +1,41 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  username: MyString
+  type: MyString
+  host: MyString
+  secret: MyString
+  disallow: MyString
+  allow: MyString
+  callerid: MyString
+  callerid_name: MyString
+  context: MyString
+  accountcode: MyString
+  dtmfmode: MyString
+  language: MyString
+  qualify: MyString
+  technology: MyString
+  ipaddr: MyString
+  port: MyString
+  regseconds: 1
+
+two:
+  name: MyString
+  username: MyString
+  type: MyString
+  host: MyString
+  secret: MyString
+  disallow: MyString
+  allow: MyString
+  callerid: MyString
+  callerid_name: MyString
+  context: MyString
+  accountcode: MyString
+  dtmfmode: MyString
+  language: MyString
+  qualify: MyString
+  technology: MyString
+  ipaddr: MyString
+  port: MyString
+  regseconds: 1
