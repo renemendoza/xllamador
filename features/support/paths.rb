@@ -10,6 +10,10 @@ module NavigationHelpers
     
     when /the homepage/
       '/'
+
+    when /the new voip devices page/
+      new_voip_device_path
+
     
     # Add more mappings here.
     # Here is a more fancy example:

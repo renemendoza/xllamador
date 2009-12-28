@@ -1,0 +1,29 @@
+<% form.inputs  do %>
+
+  <%= form.input :name, :label => 'Name' %>
+  <%= form.input :secret, :label => 'Password' %>
+
+  <%= form.input :allowed_codecs, :as => :check_boxes, :label => 'Codec Configuration', :collection => VoipDevice.codecs%>
+
+  <%= form.input :callerid, :label => 'Callerid' %>
+  <%= form.input :callerid_name, :label => 'Callerid name' %>
+  <%= form.input :context, :label => 'Context'%>
+  <%= form.input :accountcode, :label => 'Accountcode' %>
+
+  <%= form.input :is_trunk, :label => 'Is trunk', :as => :boolean %>
+
+<% end %>
+<% form.inputs :name => "Advanced", :id => "advanced" do %>
+  <%= form.input :technology, :as => :radio, :label => 'Technology', :collection => VoipDevice.protocols.collect {|p| [p.upcase, p]}  %>
+  <%= form.input :host, :label => 'Host' %>
+  <%= form.input :username, :label => 'Username' %>
+  <%= form.input :type, :as => :radio,  :label => 'Type' , :collection => VoipDevice.types.collect {|t| [t.capitalize, t]} %>
+  <%= form.input :dtmfmode, :as => :radio, :label => 'DTMF', :collection => VoipDevice.dtmf_modes.collect {|d| [d.upcase, d]}  %>
+  <%= form.input :qualify, :label => 'Qualify' %>
+  <%= form.input :disallow, :label => 'Disallow' %>
+  <%= form.input :language, :label => 'Language' %>
+
+<% end %>
+<% form.buttons do %>
+  <%= form.commit_button %>
+<% end %>

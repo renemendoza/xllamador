@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091113235718) do
+ActiveRecord::Schema.define(:version => 20091228052837) do
+
+  create_table "users", :force => true do |t|
+    t.string   "username"
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistance_token"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "voip_devices", :force => true do |t|
     t.string   "name"
@@ -17,21 +27,24 @@ ActiveRecord::Schema.define(:version => 20091113235718) do
     t.string   "type",          :default => "friend"
     t.string   "host",          :default => "dynamic"
     t.string   "secret"
-    t.string   "disallow"
-    t.string   "allow"
+    t.string   "disallow",      :default => "all"
+    t.string   "allow",         :default => "ulaw"
     t.string   "callerid"
     t.string   "callerid_name"
-    t.string   "context"
-    t.string   "accountcode"
-    t.string   "dtmfmode"
-    t.string   "language"
-    t.string   "qualify"
-    t.string   "technology"
+    t.string   "context",       :default => "default"
+    t.string   "accountcode",   :default => "default"
+    t.string   "dtmfmode",      :default => "rfc2833"
+    t.string   "language",      :default => "en"
+    t.string   "qualify",       :default => "yes"
+    t.string   "technology",    :default => "sip"
     t.string   "ipaddr"
     t.string   "port"
     t.integer  "regseconds"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "is_trunk",      :default => false
+    t.string   "nat",           :default => "no"
+    t.string   "canreinvite",   :default => "no"
   end
 
 end
