@@ -1,5 +1,8 @@
 class VoipDevicesController < ApplicationController
+  load_and_authorize_resource
+
   def index
+    @voip_devices = VoipDevice.all
   end
 
   def new

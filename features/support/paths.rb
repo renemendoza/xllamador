@@ -13,8 +13,9 @@ module NavigationHelpers
 
     when /the new voip devices page/
       new_voip_device_path
-
     
+    when /the voip devices list/
+      voip_devices_path
     # Add more mappings here.
     # Here is a more fancy example:
     #

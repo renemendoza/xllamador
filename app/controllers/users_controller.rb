@@ -3,7 +3,7 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-  def edit
+  def create
     @user = User.new(params[:user])
     begin 
       @user.save!
@@ -13,5 +13,6 @@ class UsersController < ApplicationController
       render :action => "new"
     end
   end
+
 
 end

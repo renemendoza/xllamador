@@ -4,11 +4,11 @@ class UserSessionsController < ApplicationController
   end
 
   def create
-    @user_session = UserSession.new
+    @user_session = UserSession.new(params[:user_session])
 
     begin 
       @user_session.save!
-      flash[:notice] = "Logged in"
+      flash[:notice] = "Successfully logged in"
       redirect_to voip_devices_path
     rescue
       render :action => "new"
@@ -19,7 +19,7 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.find
     @user_session.destroy
 
-    flash[:notice] = "Logged out"
+    flash[:notice] = "Successfully logged out"
     redirect_to voip_devices_path
   end
 

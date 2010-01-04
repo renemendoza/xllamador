@@ -9,16 +9,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091228052837) do
+ActiveRecord::Schema.define(:version => 20100104025512) do
 
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "email"
     t.string   "crypted_password"
     t.string   "password_salt"
-    t.string   "persistance_token"
+    t.string   "persistence_token"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "role"
+    t.integer  "roles_mask"
   end
 
   create_table "voip_devices", :force => true do |t|

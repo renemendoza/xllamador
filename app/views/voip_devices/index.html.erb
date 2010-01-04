@@ -1,2 +1,16 @@
-<h1>VoipDevices#index</h1>
-<p>Find me in app/views/voip_devices/index.html.erb</p>
+<h1>VoipDevices list</h1>
+
+<table>
+  <tr> 
+    <th> Name </th> <th> Technology </th>
+  </tr>
+  <% @voip_devices.each do |dev| %>
+  <tr>
+    <td> <%= dev.name %> </td> <td> <%= dev.technology %> </td>
+  </tr>
+<% end %>
+</table>
+
+<% if can? :create, @voip_devices %>
+  <%= link_to "New Voip Device", new_voip_device_path %>
+<% end %>
